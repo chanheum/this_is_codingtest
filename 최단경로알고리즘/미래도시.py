@@ -15,15 +15,15 @@ for _ in range(M):
     graph[a][b] = 1
     graph[b][a] = 1
 
-# 거쳐갈 노드 x와 최종 목적지 노드 k를 입력 받기
-x, k = map(int, input().split())
+# 거쳐갈 노드 k와 최종 목적지 노드 x를 입력 받기
+k, x = map(int, input().split())
 
 for k in range(N+1):
     for i in range(N + 1):
         for j in range(N + 1):
             graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
 
-distance = graph[1][x] + graph[x][k]
+distance = graph[1][k] + graph[k][x]
 
 if distance >= INF:
     print("-1")
